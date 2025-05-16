@@ -262,14 +262,15 @@ html , body{
     }
 }
 
-#ig{
+
+#ig, #gm, #ld {
     display: flex;
     background-color: black;
     height: 40%;
     width: 100%;
 }
 
-#ig #img{
+#ig #img, #gm #img, #ld #img {
     background-color: black;
     height: 100%;
     width: 45%;
@@ -278,7 +279,7 @@ html , body{
     align-items: center;
 }
 
-#ig #txt{
+#ig #txt, #gm #txt, #ld #txt {
     background-color: black;
     height: 100%;
     width: 55%;
@@ -289,173 +290,165 @@ html , body{
     font-size: 50px;
 }
 
-#ig #txt a{
+#ig #txt a {
     text-decoration: none;
     background: linear-gradient(45deg, 
-  #feda75, 
-  #fa7e1e,  
-  #d62976,  
-  #962fbf,  
-  #4f5bd5   
-);
-background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-}  
+      #feda75, 
+      #fa7e1e,  
+      #d62976,  
+      #962fbf,  
+      #4f5bd5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
 
-#ig #img img{
+#ig #img img,
+#gm #img img,
+#ld #img img {
     width: 300px;
 }
 
-#gm{
-    display: flex;
-    background-color: black;
-    height: 40%;
-    width: 100%;
-}
-
-#gm #img{
-    background-color: black;
-    height: 100%;
-    width: 45%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-#gm #txt{
-    background-color: black;
-    height: 100%;
-    width: 55%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 50px;
-}
-
-#gm #txt a{
+#gm #txt a {
     text-decoration: none;
     color: white;
 }
 
-#gm #img img{
-    width: 300px;
-}
-
-#ld{
-    display: flex;
-    background-color: black;
-    height: 40%;
-    width: 100%;
-}
-
-#ld #img{
-    background-color: black;
-    height: 100%;
-    width: 45%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-#ld #txt{
-    background-color: black;
-    height: 100%;
-    width: 55%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 50px;
-}
-
-#ld #txt a{
+#ld #txt a {
     text-decoration: none;
     background: linear-gradient(135deg, #0077B5 0%, #ffffff 100%);
     background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-}  
-
-#ld #img img{
-    width: 300px;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
-
-#frontPage1{
+#frontPage1 {
     width: 100%;
-    height: calc(100vh-15vh);
+    height: calc(100vh - 25vh);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     padding-top: 20px;
+    flex-wrap: wrap;
 }
 
-#pd, #edu, #skill{
+#pd, #edu, #skill {
     height: 550px;
     width: 410px;
     background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
-
     padding-top: 5px;
     border-radius: 20px;
     transition: transform 0.3s ease;
 }
 
-#pd:hover{
+#pd:hover, #edu:hover, #skill:hover {
     transform: translateY(-90px);
-    
-}
-#edu:hover{
-    transform: translateY(-90px);
-   
-}
-#skill:hover{
-    transform: translateY(-90px);
-
 }
 
-#header1{
+#header1 {
     display: flex;
     justify-content: center;
     align-items: center;
-     font-family: "Oregano", serif;
-     font-size: 20px;
-}
-
-#pd #content{
-    font-size: 16px;
-     display: flex;
-    align-items: center;
-    justify-content: center;
     font-family: "Oregano", serif;
-    padding-top: 19px;
+    font-size: 20px;
 }
 
-#pd #content a{
+#pd #content, #edu #content, #skill #content {
+    font-family: "Oregano", serif;
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+}
+
+#pd #content {
+    font-size: 16px;
+    justify-content: center;
+}
+
+#pd #content a {
     text-decoration: none;
     color: black;
 }
 
-#edu #content{
+#edu #content {
     font-size: 17px;
-    display: flex;
-    align-items: center;
     justify-content: flex-end;
-    font-family: "Oregano", serif;
-    padding-top: 15px;
     padding-left: 30px;
 }
 
-#skill #content{
+#skill #content {
     font-size: 19px;
-     display: flex;
-    align-items: center;
     justify-content: center;
-    font-family: "Oregano", serif;
-     font-weight: 400;
-  font-style: normal;
-    padding-top: 15px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+@media (max-width: 1024px) {
+    #ig #txt, #gm #txt, #ld #txt {
+        font-size: 40px;
+    }
+
+    #ig #img img,
+    #gm #img img,
+    #ld #img img {
+        width: 220px;
+    }
+
+    #pd, #edu, #skill {
+        width: 90%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    #frontPage1 {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+}
+
+
+@media (max-width: 768px) {
+    #ig, #gm, #ld {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #ig #img, #gm #img, #ld #img,
+    #ig #txt, #gm #txt, #ld #txt {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    #ig #txt, #gm #txt, #ld #txt {
+        font-size: 30px;
+    }
+
+    #ig #img img,
+    #gm #img img,
+    #ld #img img {
+        width: 180px;
+    }
+
+    #pd:hover, #edu:hover, #skill:hover {
+        transform: none; 
+    }
+}
+
+
+@media (max-width: 400px) {
+    #ig #txt, #gm #txt, #ld #txt {
+        font-size: 24px;
+    }
+
+    #ig #img img,
+    #gm #img img,
+    #ld #img img {
+        width: 140px;
+    }
 }
